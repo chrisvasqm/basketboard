@@ -52,4 +52,16 @@ class PlayerTest {
         assertThat(player.assists).isEqualTo(1)
     }
 
+    @Test
+    fun `Can the user remove a player's assist`() {
+        player.addAssist()
+        player.removeAssist()
+
+        assertThat(player.assists).isEqualTo(0)
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `If a player has 0 assists and we remove one more, an IllegalArgumentException will be thrown`() {
+        player.removeAssist()
+    }
 }

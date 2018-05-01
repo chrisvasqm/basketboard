@@ -31,4 +31,10 @@ class Player(var name: String) {
         _assists++
     }
 
+    fun removeAssist() {
+        if (_assists == 0)
+            throw IllegalArgumentException("Player has no assists points to be removed")
+
+        _assists--
+    }
 }
