@@ -19,4 +19,11 @@ class Player(var name: String) {
 
         _points += points
     }
+
+    fun removePoints(points: Int) {
+        if (_points < points)
+            throw IllegalArgumentException("Points to be removed can't be higher than the total")
+
+        _points -= points
+    }
 }
