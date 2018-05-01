@@ -15,14 +15,14 @@ class Player(var name: String) {
 
     fun addPoints(points: Int) {
         if (points < 0)
-            throw IllegalArgumentException("Negative values are not allowed. Use removePoint() instead")
+            throw IllegalArgumentException("Negative values are not allowed. Use removePoint() instead.")
 
         _points += points
     }
 
     fun removePoints(points: Int) {
         if (_points < points)
-            throw IllegalArgumentException("Points to be removed can't be higher than the total")
+            throw IllegalArgumentException("Points to be removed can't be higher than the total.")
 
         _points -= points
     }
@@ -33,13 +33,20 @@ class Player(var name: String) {
 
     fun removeAssist() {
         if (_assists == 0)
-            throw IllegalArgumentException("Player has no assists points to be removed")
+            throw IllegalArgumentException("Player has no assists points to be removed.")
 
         _assists--
     }
 
     fun addFoul() {
         _fouls++
+    }
+
+    fun removeFoul() {
+        if (_fouls == 0)
+            throw IllegalArgumentException("Player has no fouls to be removed.")
+
+        _fouls--
     }
 
 }
