@@ -64,4 +64,11 @@ class PlayerTest {
     fun `If a player has 0 assists and we remove one more, an IllegalArgumentException will be thrown`() {
         player.removeAssist()
     }
+
+    @Test
+    fun `If a player makes a foul, his foul count will increase`() {
+        player.addFoul()
+
+        assertThat(player.fouls).isEqualTo(1)
+    }
 }

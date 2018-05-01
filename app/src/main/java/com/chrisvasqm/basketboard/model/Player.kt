@@ -5,13 +5,13 @@ class Player(var name: String) {
     val points
         get() = _points
 
-    private var _fouls = 0
-    val fouls
-        get() = _fouls
-
     private var _assists = 0
     val assists
         get() = _assists
+
+    private var _fouls = 0
+    val fouls
+        get() = _fouls
 
     fun addPoints(points: Int) {
         if (points < 0)
@@ -37,4 +37,9 @@ class Player(var name: String) {
 
         _assists--
     }
+
+    fun addFoul() {
+        _fouls++
+    }
+
 }
