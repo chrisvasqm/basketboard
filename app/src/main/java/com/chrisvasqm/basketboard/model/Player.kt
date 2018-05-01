@@ -26,4 +26,9 @@ class Player(var name: String) {
 
         _points -= points
     }
+
+    fun addAssist() {
+        _assists++
+    }
+
 }

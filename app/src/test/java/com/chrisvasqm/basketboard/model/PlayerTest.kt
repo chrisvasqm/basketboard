@@ -45,4 +45,11 @@ class PlayerTest {
         player.removePoints(1)
     }
 
+    @Test
+    fun `Can a player assist`() {
+        player.addAssist()
+
+        assertThat(player.assists).isEqualTo(1)
+    }
+
 }
