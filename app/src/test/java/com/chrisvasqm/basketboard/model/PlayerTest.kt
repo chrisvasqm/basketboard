@@ -13,6 +13,13 @@ class PlayerTest {
     }
 
     @Test
+    fun `Player's name can be changed later`() {
+        player.name = "Test2"
+
+        assertThat(player.name).isEqualTo("Test2")
+    }
+
+    @Test
     fun `When a player scores a point, his total score increases`() {
         player.addPoints(1)
 
